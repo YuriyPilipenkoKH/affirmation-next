@@ -1,13 +1,15 @@
 "use client"
 
-import React from 'react'
 import Logo from '../Logo'
 import { UserButton } from '@clerk/nextjs'
 import { NavWrap } from './NavBar.styled'
 import Button from '../Button/Button'
+import UserContext, { UserContextType } from '@/context/UserContext'
+import { useContext } from 'react'
 
 
-function NavBar() {
+function NavBar()  {
+    const { userId } = useContext(UserContext as React.Context<UserContextType>);
 
   return (
     <NavWrap>
@@ -15,8 +17,9 @@ function NavBar() {
             <Logo/>
         </div>
         <div className='flex gap-5'>
-            <Button>New</Button>
-
+            {userId && (
+                <Button>New</Button>
+            )}
             <UserButton afterSignOutUrl="/"/>
         </div>
       

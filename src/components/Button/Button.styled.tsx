@@ -10,9 +10,9 @@ justify-content: center;
 gap: 8px;
 background-color: var(--green);
 color: #eee;
-border: none;
+border: 2px solid #eee;
 border-radius: 4px;
-padding: 12px 24px ;
+padding: 4px 24px ;
 font-size: 16px;
 cursor: pointer;
 outline: none;
@@ -20,7 +20,7 @@ box-shadow: var(--shadow-four);
 transition: all 0.4s ease;
 
 &:hover  {
-  color: #888;
+  color: #092e7d;
   background-color: var(--bright-green);
   box-shadow: var(--shadow-two);
  
@@ -70,6 +70,7 @@ export const ripple=css`
 export const SBtn = styled('button')`
   position: relative;
   overflow: hidden;
+
 
  ${buttonStyles} ;
  ${ripple} ;
