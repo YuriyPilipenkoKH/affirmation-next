@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 import { ClerkProvider } from '@clerk/nextjs'
 import "./globals.css";
 import Container from "@/components/Container/Container";
 import NavBar from "@/components/NavBar/NavBar";
 import UserContextProvider from "@/context/UserContextProvider";
+import { Toaster } from "react-hot-toast";
+import { options } from "@/lib/hotToast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
             <Container>
               <NavBar/>
             {children}
+            <Toaster position="top-center" toastOptions={options} gutter={24} />
             </Container>
           </body>
         </UserContextProvider>

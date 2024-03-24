@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 export const MContainer = styled('div')`
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 40px;
     margin: 0 auto;
     height:  100vh ;
 

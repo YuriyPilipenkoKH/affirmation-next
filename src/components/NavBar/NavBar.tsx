@@ -6,6 +6,7 @@ import { NavWrap } from './NavBar.styled'
 import Button from '../Button/Button'
 import UserContext, { UserContextType } from '@/context/UserContext'
 import { useContext } from 'react'
+import CreateNewTopik from '../CreateNewTopic'
 
 
 function NavBar()  {
@@ -18,7 +19,7 @@ function NavBar()  {
         </div>
         <div className='flex gap-5'>
             {userId && (
-                <Button>New</Button>
+                <CreateNewTopik/>
             )}
             <UserButton afterSignOutUrl="/"/>
         </div>

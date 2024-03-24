@@ -11,7 +11,7 @@ export const NavWrap = styled('nav')`
     gap: 8px;
     height: 70px;
     width:  100% ;
-
+    border-bottom: 1px solid #000;
 `;
 
 

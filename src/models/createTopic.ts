@@ -1,6 +1,6 @@
 
 import {z} from 'zod'
-export const createTopikSchema = z.object({
+export const createTopicSchema = z.object({
     title: z
     .string()
     .min(4, 'Title should be at least 4 characters long')
@@ -13,5 +13,5 @@ export const createTopikSchema = z.object({
     
 })
 
-export type createTopikSchemaType = z.infer<typeof createTopikSchema>
+export type createTopicSchemaType = z.infer<typeof createTopicSchema>
 

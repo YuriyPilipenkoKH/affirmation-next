@@ -19,11 +19,9 @@ function HomePage() {
             }
         }
     fetchCurrentUser()
-
-
+    
     return () => {
         setUserId(null)
-        // Cleanup logic can be placed here if needed
     };
     }, [])
 
