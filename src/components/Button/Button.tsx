@@ -8,4 +8,5 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     return <SBtn type='button' {...props}> {children}</SBtn>;
 };
 
+
 export default Button;
