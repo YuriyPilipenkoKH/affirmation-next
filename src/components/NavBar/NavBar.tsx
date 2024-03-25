@@ -3,10 +3,9 @@
 import Logo from '../Logo'
 import { UserButton } from '@clerk/nextjs'
 import { NavWrap } from './NavBar.styled'
-import Button from '../Button/Button'
 import UserContext, { UserContextType } from '@/context/UserContext'
 import { useContext } from 'react'
-import CreateNewTopik from '../Modals/CreateNewTopic'
+import CreateNewTopic from '../Modals/CreateNewTopic'
 
 
 function NavBar()  {
@@ -19,7 +18,7 @@ function NavBar()  {
         </div>
         <div className='flex gap-5'>
             {userId && (
-                <CreateNewTopik/>
+                <CreateNewTopic/>
             )}
             <UserButton afterSignOutUrl="/"/>
         </div>

@@ -1,6 +1,10 @@
 import TopicTypes from '@/models/topicTypes'
 import React from 'react'
-import { CardWrap } from './TopicCard.styled'
+import { BtnWrap, CardWrap } from './TopicCard.styled'
+import { TfiTrash } from 'react-icons/tfi'
+import { GrEdit } from 'react-icons/gr'
+import { Button } from 'antd'
+import ConfirmModal from '../Modals/ConfirmModal'
 
 interface TopicCardProps {
       topic:TopicTypes
@@ -9,10 +13,22 @@ interface TopicCardProps {
 
   const TopicCard: React.FC<TopicCardProps> = ({ topic }) => {
 
+
+    const edit = async () => {
+      
+    }
+
   return (
     <CardWrap>
-      <div className='card_title'>
+      <div className='card_title bg-gradient-to-r from-emerald-950 to-emerald-700'>
         { topic?.title }
+        <BtnWrap className='absolute'>
+          <button>
+            <GrEdit />
+          </button>
+          <ConfirmModal
+          topic={topic} />
+        </BtnWrap>
       </div>
       <div className='card_content'>
         { topic?.content }

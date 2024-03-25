@@ -11,7 +11,7 @@ import {  ErrorWrap } from './Modals.styled';
 import { CreateNewForm } from './Forms.styled';
 
 
-const CreateNewTopik: React.FC = () => {
+const CreateNewTopic: React.FC = () => {
     const { userId, setReRender, reRender} = useContext(UserContext as React.Context<UserContextType>);
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -146,4 +146,4 @@ useEffect(() => {
 
 
 
-export default CreateNewTopik;
+export default CreateNewTopic;
