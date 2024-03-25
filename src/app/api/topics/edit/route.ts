@@ -29,12 +29,12 @@ export async function PATCH(req: NextRequest) {
         topic.title = title;
 
         // Save the updated collection
-        await topic.save();
+       const updatedTopic = await topic.save();
 
         return NextResponse.json({
             message: `Topic edited successfully`,
             success: true,
-            // updatedTopic
+            updatedTopic
         });
     } catch (error) {
         return NextResponse.json(

@@ -57,8 +57,13 @@ const onSubmit = async (data: createTopicSchemaType) => {
             id: topic._id ,
         })
         .then(response => {
+            const updatedData = response.data.updatedTopic;
+            reset({
+                title: updatedData?.title,
+                content: updatedData?.content,
+            })
+
           toast.success(`Another Topic edited`)
-          reset()
           setReRender(!reRender)
           handleCancel();
          

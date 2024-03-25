@@ -51,7 +51,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({topic}) => {
       <button onClick={showModal}>
       <TfiTrash /> 
       </button>
-      <Modal className='ConfirmModal'
+      <Modal className='ConfirmModal topic-modal'
         title={modalTitle} 
         open={isModalOpen} 
         onOk={handleOk} 

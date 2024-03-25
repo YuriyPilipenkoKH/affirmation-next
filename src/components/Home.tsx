@@ -28,7 +28,7 @@ function HomePage() {
 
 
   return (
-    <div className=" px-5" >
+    <div className=" px-5 pb-5" >
       <TopicsList/>
     </div>
   )
