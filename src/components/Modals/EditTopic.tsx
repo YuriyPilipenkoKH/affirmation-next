@@ -8,7 +8,7 @@ import { createTopicSchema, createTopicSchemaType } from '@/models/createTopic';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import {  ErrorWrap } from './Modals.styled';
-import { CreateNewForm } from './Forms.styled';
+import { CreateNewForm } from '../Forms/Forms.styled';
 import TopicTypes from '@/models/topicTypes';
 import { GrEdit } from 'react-icons/gr';
 

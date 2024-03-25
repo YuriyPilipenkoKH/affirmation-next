@@ -1,23 +1,13 @@
 import TopicTypes from '@/models/topicTypes'
 import React from 'react'
 import { BtnWrap, CardWrap } from './TopicCard.styled'
-import { TfiTrash } from 'react-icons/tfi'
-import { GrEdit } from 'react-icons/gr'
-import { Button } from 'antd'
 import ConfirmModal from '../Modals/ConfirmModal'
 import EditTopic from '../Modals/EditTopic'
-
 interface TopicCardProps {
       topic:TopicTypes
     }
 
-
   const TopicCard: React.FC<TopicCardProps> = ({ topic }) => {
-
-
-    const edit = async () => {
-      
-    }
 
   return (
     <CardWrap>

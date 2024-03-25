@@ -36,3 +36,42 @@ export const CreateNewForm = styled('form')`
 
 
 `;
+export const StyledSearchingForm = styled('form')`
+    position: relative;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+
+    & > label  {
+        display: flex;
+        gap: 5px;
+
+      & > input{
+            outline: none;
+            width: 360px;
+            background: none;
+            padding: 6px 70px 6px 16px;
+            border: 2px solid #999;
+            border-radius: 6px;
+      }  
+    }
+    & > .search_btn_wrap{
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        display: flex;
+        gap: 10px;
+
+        &> button{
+            outline: none;
+        }  
+
+      &> button > svg {
+        fill: #f8fafc;
+      }  
+    }
+
+   
+`

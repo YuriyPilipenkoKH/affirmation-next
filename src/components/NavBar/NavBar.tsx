@@ -7,14 +7,17 @@ import UserContext, { UserContextType } from '@/context/UserContext'
 import { useContext } from 'react'
 import CreateNewTopic from '../Modals/CreateNewTopic'
 
+import SearchingForm from '../Forms/SearchingForm'
+
 
 function NavBar()  {
     const { userId } = useContext(UserContext as React.Context<UserContextType>);
 
   return (
     <NavWrap>
-        <div className='flex gap-2'>
+        <div className='flex gap-5'>
             <Logo/>
+            <SearchingForm/>
         </div>
         <div className='flex gap-5'>
             {userId && (
