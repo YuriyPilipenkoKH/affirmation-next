@@ -7,8 +7,9 @@ import { ListWrap } from './TopicsList.styled';
 
 function TopicsList() {
     const [list, setList] = useState<TopicTypes[]>([]);
-    const { user, reRender } = useContext(UserContext as React.Context<UserContextType>);
+    const { query, reRender } = useContext(UserContext as React.Context<UserContextType>);
     console.log(list)
+    console.log(query)
 
     const grabUsersTopics = async () => {
         try {

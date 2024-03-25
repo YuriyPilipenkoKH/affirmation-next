@@ -37,7 +37,7 @@ export const CardWrap = styled('div')`
         border-radius: 6px;
         border: 2px solid #ee0;
         background-color: beige;
-        max-height: 110px;
+        max-height: 140px;
         overflow: hidden; 
 
 

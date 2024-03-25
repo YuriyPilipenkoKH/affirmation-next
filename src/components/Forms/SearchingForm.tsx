@@ -1,12 +1,14 @@
 import { searchSchema, searchSchemaType } from '@/models/searchSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { BiSearchAlt } from "react-icons/bi";
 import { StyledSearchingForm } from './Forms.styled';
 import { IoCloseCircleOutline } from "react-icons/io5";
+import UserContext, { UserContextType } from '@/context/UserContext';
 
 function SearchingForm() {
+  const {  setQuery } = useContext(UserContext as React.Context<UserContextType>);
     const [open, setOpen] = useState(false);
     const formRef  = useRef<HTMLDivElement>(null); // Reference to the form div element
     const {
@@ -79,7 +81,7 @@ function SearchingForm() {
         noValidate>
             <label >
                 <input
-                {...register('query')}
+                 {...register('query', { onChange: (e) => setQuery(e.target.value) })} // Register onChange event
                 type="text" />
             </label>
             <div className='search_btn_wrap absolute'>

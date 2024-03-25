@@ -7,6 +7,8 @@ export interface UserContextType {
   setUserId: React.Dispatch<any>; 
   reRender:boolean;
   setReRender: React.Dispatch<any>;
+  query:string;
+  setQuery: React.Dispatch<any>;
 }
 
 const UserContext = React.createContext<UserContextType | null>(null);
