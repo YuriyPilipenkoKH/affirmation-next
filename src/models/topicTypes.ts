@@ -1,6 +1,8 @@
-type Topic = {
+type TopicTypes = {
+    _id: string;
     userId: string;
     title: string;
     content: string;
+    createdAt: Date | null;
 }
-export default Topic
+export default TopicTypes

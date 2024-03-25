@@ -2,7 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+  --accent-color: #ff8356;
+  --fone-color: #fef9f9;
+
+  --yellow: #ffc107;
+  --white: #ffffff;
+  --white-bg: #fdf7f2;
+
+  --black: #111111;
+  --medium-blue: #76bcf9;
+  --blue: #54adff;
+  --light-blue: #cce4fb;
+  --green: #159638;
+  --red: #f43f5e;
+  --grey: #888888;
+
+}
+
 body {
   background-color: #777;
 }
 
+
+.topic-modal div{
+  margin: 0 auto;
+}
+
+.topic-modal div > .ant-modal-content{
+  background-color: #eee;
+  height: 480px;
+  width: 300px ;
+
+  @media screen and (min-width: 768px) {
+    width: 520px;
+}
+}
+.topic-modal div > .ant-modal-content > .ant-modal-header {
+  background-color: #eee;
+
+}

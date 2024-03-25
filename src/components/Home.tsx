@@ -3,6 +3,7 @@
 import UserContext, { UserContextType } from "@/context/UserContext";
 import { retrieveUserId } from "@/lib/retrieveUserId"
 import { useContext, useEffect, useState } from "react"
+import TopicsList from "./TopicsList/TopicsList";
 
 function HomePage() {
     const { user, setUserId } = useContext(UserContext as React.Context<UserContextType>);
@@ -19,7 +20,7 @@ function HomePage() {
             }
         }
     fetchCurrentUser()
-    
+
     return () => {
         setUserId(null)
     };
@@ -27,8 +28,8 @@ function HomePage() {
 
 
   return (
-    <div>
-      Home page
+    <div className=" px-5" >
+      <TopicsList/>
     </div>
   )
 }

@@ -6,7 +6,7 @@ import { NavWrap } from './NavBar.styled'
 import Button from '../Button/Button'
 import UserContext, { UserContextType } from '@/context/UserContext'
 import { useContext } from 'react'
-import CreateNewTopik from '../CreateNewTopic'
+import CreateNewTopik from '../Modals/CreateNewTopic'
 
 
 function NavBar()  {
