@@ -5,6 +5,7 @@ import { TfiTrash } from 'react-icons/tfi'
 import { GrEdit } from 'react-icons/gr'
 import { Button } from 'antd'
 import ConfirmModal from '../Modals/ConfirmModal'
+import EditTopic from '../Modals/EditTopic'
 
 interface TopicCardProps {
       topic:TopicTypes
@@ -23,9 +24,8 @@ interface TopicCardProps {
       <div className='card_title bg-gradient-to-r from-emerald-950 to-emerald-700'>
         { topic?.title }
         <BtnWrap className='absolute'>
-          <button>
-            <GrEdit />
-          </button>
+          <EditTopic
+          topic={topic} />
           <ConfirmModal
           topic={topic} />
         </BtnWrap>

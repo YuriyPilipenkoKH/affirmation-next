@@ -12,7 +12,7 @@ interface ConfirmModalProps {
 }
 
 const ConfirmModal: React.FC<ConfirmModalProps> = ({topic}) => {
-    const {  setReRender, reRender} = useContext(UserContext as React.Context<UserContextType>);
+ const {  setReRender, reRender} = useContext(UserContext as React.Context<UserContextType>);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -43,15 +43,15 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({topic}) => {
      }
     
   }
-  const modalTitle = `Are you sure deleting ${topic?.title}`
+  const modalTitle = `Are you sure deleting ${topic?.title} ?`
 
   return (
     <>
 
       <button onClick={showModal}>
-         <TfiTrash /> 
+      <TfiTrash /> 
       </button>
-      <Modal 
+      <Modal className='ConfirmModal'
         title={modalTitle} 
         open={isModalOpen} 
         onOk={handleOk} 

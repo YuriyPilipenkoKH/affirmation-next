@@ -24,7 +24,8 @@ export const CardWrap = styled('div')`
         width: 100%;
         height: 50px;
         border-radius: 6px;
-        overflow: hidden;
+        overflow: hidden; 
+
 
     @media screen and (min-width: 768px) {
          padding: 12px 80px 12px 20px
@@ -37,7 +38,8 @@ export const CardWrap = styled('div')`
         border: 2px solid #ee0;
         background-color: beige;
         max-height: 110px;
-        overflow: hidden;
+        overflow: hidden; 
+
 
     @media screen and (min-width: 768px) {
         padding: 12px 20px ;
@@ -51,7 +53,7 @@ export const BtnWrap = styled('div')`
     right: 12px;
     display: flex;
     gap: 8px;
-    &>button{
+    & > div > button{
         width: 30px;
         height: 30px;
         display: flex;
@@ -60,10 +62,10 @@ export const BtnWrap = styled('div')`
         border-radius: 6px;
         transition: 0.5s ease;
 
-      &:hover{
+      & :hover{
         border: 1px solid #d9d9d9;
       }  
-      &>svg {
+      & > svg {
         fill: #d9d9d9 ;
       }  
     }

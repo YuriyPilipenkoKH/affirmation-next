@@ -23,6 +23,56 @@
 
 body {
   background-color: #777;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 1s ease;
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+}
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 
@@ -46,7 +96,33 @@ body {
     width: 520px;
 }
 }
-.topic-modal div > .ant-modal-content > .ant-modal-header {
-  background-color: #eee;
-
+.ant-modal-footer >.ant-btn{
+  /* background-color: #ee0; */
+  color: #333;
+  border: 2px solid #777;
+  
 }
+
+.topic-modal div > .ant-modal-content > .ant-modal-header,
+ .ant-modal-title {
+  background-color: #eee;
+  
+}
+
+.ConfirmModal div > .ant-modal-content{
+  background-color: #eee;
+  height: 200px;
+  width: 300px ;
+
+  @media screen and (min-width: 768px) {
+    width: 520px;
+}
+}
+
+.ConfirmModal>div[tabindex='-1']{
+  width: 300px;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    width: 520px;
+}
+} 
