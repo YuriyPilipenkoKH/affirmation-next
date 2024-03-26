@@ -14,6 +14,13 @@ function TopicsList() {
     const filteredTopics = list.filter(item => 
       item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query))
 
+      if (list?.length === 0) {
+        setEmpty(true)
+      } 
+      else {
+        setEmpty(false)
+      }
+
     const grabUsersTopics = async (id: string | null ) => {
           setLoading(true);
         try {
@@ -24,12 +31,6 @@ function TopicsList() {
             
             if (response.data && response.data.topics) {
               setList(response.data.topics);
-            }
-            if (filteredTopics?.length === 0) {
-              setEmpty(true)
-            } 
-            else {
-              setEmpty(false)
             }
             // setReRender(!reRender)
           })
@@ -59,7 +60,7 @@ function TopicsList() {
           )
           :(
             <div className='flex items-center justify-center font-bold text-2xl text-slate-300'>
-            No topics added yet
+            No topics here
           </div>
           )
         }

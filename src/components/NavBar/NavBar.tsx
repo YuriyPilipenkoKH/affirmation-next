@@ -17,7 +17,7 @@ function NavBar()  {
     const router  = useRouter()
 
     const signIn = () => {
-        router.push('/sign-in?redirect_url=https%3A%2F%2Faffirmation-next.vercel.app%2F')
+        router.push('/sign-in')
         router.refresh()
     }
 
@@ -25,7 +25,7 @@ function NavBar()  {
     <NavWrap>
         <div className='flex gap-5'>
             <Logo/>
-        {empty && (
+        {!empty && (
             <SearchingForm/>
             )}
         </div>
