@@ -7,6 +7,7 @@ import { ListWrap } from './TopicsList.styled';
 
 function TopicsList() {
     const [list, setList] = useState<TopicTypes[]>([]);
+    const [loading, setLoading] = useState(false);
     const { query, reRender, userId,  setEmpty} = useContext(UserContext as React.Context<UserContextType>);
     console.log(list)
 
@@ -14,7 +15,9 @@ function TopicsList() {
       item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query))
 
     const grabUsersTopics = async (id: string | null ) => {
+          setLoading(true);
         try {
+
           // const response = await axios.get("/api/topics/grab");
           const response = await axios.get(`/api/topics/get/${id}`)
           .then(response => {
@@ -34,6 +37,9 @@ function TopicsList() {
         } catch (error) {
           console.log("Getting failed", error);
         }
+        finally{
+          setLoading(false);
+        }
       };
     
       useEffect(() => {
@@ -42,13 +48,22 @@ function TopicsList() {
         }
     }, [reRender, userId]);
 
-      if (filteredTopics?.length === 0) {
+      if (filteredTopics?.length === 0  && userId) {
         return(
           <ListWrap >
+          {loading
+           ? (
+              <div className='flex items-center justify-center font-bold text-2xl text-slate-300'>
+                  Loading ....
+               </div>
+          )
+          :(
             <div className='flex items-center justify-center font-bold text-2xl text-slate-300'>
-             No added topics yet
-           </div>
-          </ListWrap>
+            No topics added yet
+          </div>
+          )
+        }
+      </ListWrap>
         )
       }else
 

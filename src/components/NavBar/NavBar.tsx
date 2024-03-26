@@ -9,26 +9,38 @@ import CreateNewTopic from '../Modals/CreateNewTopic'
 import { LiaSignInAltSolid } from "react-icons/lia";
 import SearchingForm from '../Forms/SearchingForm'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 
 function NavBar()  {
     const { userId, empty } = useContext(UserContext as React.Context<UserContextType>);
+    const router  = useRouter()
+
+    const signIn = () => {
+        router.push('/sign-in')
+        router.refresh()
+    }
 
   return (
     <NavWrap>
         <div className='flex gap-5'>
             <Logo/>
+        {empty && (
             <SearchingForm/>
+            )}
         </div>
         <div className='flex gap-5'>
-        {userId && empty &&(
+        {userId && (
                 <CreateNewTopic/>
             )}
             <UserButton afterSignOutUrl="/"/>
         {!userId && (
-            <Link href='/sign-in'>
+            <button
+            onClick={signIn}
+            //  href='/sign-in'
+             >
             <LiaSignInAltSolid size={30} className='text-slate-100 hover:text-yellow-500' />
-            </Link>
+            </button>
             )}
         </div>
       
