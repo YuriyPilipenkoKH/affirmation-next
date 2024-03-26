@@ -11,6 +11,9 @@ function TopicsList() {
     console.log(list)
     console.log(query)
 
+    const filteredTopics = list.filter(item => 
+      item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query))
+
     const grabUsersTopics = async () => {
         try {
           const response = await axios.get("/api/topics/grab");
@@ -28,7 +31,7 @@ function TopicsList() {
 
   return (
     <ListWrap >
-        {list.map((topic) => (
+        {filteredTopics.map((topic) => (
             <TopicCard 
             key={topic?._id}
             topic={topic}

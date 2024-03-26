@@ -88,10 +88,10 @@ function SearchingForm() {
               <button 
               onClick={() => reset()}
               type='button'>
-              <IoCloseCircleOutline size={25} />
+                <IoCloseCircleOutline size={25} className='text-violet-950'/>
               </button>
               <button type='submit'>
-              <BiSearchAlt size={25} />
+                <BiSearchAlt size={25} />
               </button>
             </div>
         </StyledSearchingForm>

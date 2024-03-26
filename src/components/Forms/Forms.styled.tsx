@@ -52,6 +52,7 @@ export const StyledSearchingForm = styled('form')`
             outline: none;
             width: 360px;
             background: none;
+            color: #eee;
             padding: 6px 70px 6px 16px;
             border: 2px solid #999;
             border-radius: 6px;

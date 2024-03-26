@@ -5,7 +5,7 @@ import UserContext from './UserContext'
 
 function UserContextProvider({children} : {children:ReactNode}) {
     const [user, setUser] = useState(null)
-    const [userId, setUserId] = useState(null)
+    const [userId, setUserId] = useState<string | null>(null)
     const [reRender, setReRender] = useState(false)
     const [query, setQuery] = useState('')
 

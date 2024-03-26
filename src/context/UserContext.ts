@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { SetStateAction , Dispatch} from 'react';
 
 export interface UserContextType {
   user: any; // Define the type of your user object here
-  setUser: React.Dispatch<any>; // Define the type of your setUser function here
-  userId: any; 
-  setUserId: React.Dispatch<any>; 
+  setUser: Dispatch<any>; // Define the type of your setUser function here
+  userId: string | null; 
+  setUserId: Dispatch<SetStateAction<string | null>>
   reRender:boolean;
-  setReRender: React.Dispatch<any>;
+  setReRender: Dispatch<SetStateAction<boolean>>;
   query:string;
-  setQuery: React.Dispatch<any>;
+  setQuery: Dispatch<SetStateAction<string>>;
 }
 
 const UserContext = React.createContext<UserContextType | null>(null);

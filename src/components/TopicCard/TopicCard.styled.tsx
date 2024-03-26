@@ -53,6 +53,10 @@ export const BtnWrap = styled('div')`
     right: 12px;
     display: flex;
     gap: 8px;
+
+    @media screen and (min-width: 768px) {
+    gap: 16px;
+    }
     &  > button{
         width: 30px;
         height: 30px;
@@ -64,11 +68,8 @@ export const BtnWrap = styled('div')`
         padding: 6px;
         border: 1px solid #d9d9d9;
 
-      & :hover{
-        
-      }  
-      & > svg {
-        fill: #d9d9d9 ;
+        & > svg {
+          fill: #d9d9d9 ;
       }  
     }
 `

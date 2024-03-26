@@ -140,7 +140,10 @@ useEffect(() => {
           disabled={isSubmitting || !isDirty || !isValid || !!logError}
           type="submit"  
           >
-           Create
+           {(isSubmitting || !isDirty || !isValid || !!logError) 
+           ? "Edit"
+           : "Apply changes"} 
+          
            </Btn>
            {( errors?.title || errors?.content )&& (
               <ErrorWrap className="autherror">
