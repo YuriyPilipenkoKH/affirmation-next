@@ -12,7 +12,7 @@ import Link from 'next/link'
 
 
 function NavBar()  {
-    const { userId } = useContext(UserContext as React.Context<UserContextType>);
+    const { userId, empty } = useContext(UserContext as React.Context<UserContextType>);
 
   return (
     <NavWrap>
@@ -21,7 +21,7 @@ function NavBar()  {
             <SearchingForm/>
         </div>
         <div className='flex gap-5'>
-        {userId && (
+        {userId && empty &&(
                 <CreateNewTopic/>
             )}
             <UserButton afterSignOutUrl="/"/>

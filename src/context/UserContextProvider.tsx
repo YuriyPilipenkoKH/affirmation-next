@@ -8,6 +8,7 @@ function UserContextProvider({children} : {children:ReactNode}) {
     const [userId, setUserId] = useState<string | null>(null)
     const [reRender, setReRender] = useState(false)
     const [query, setQuery] = useState('')
+    const [empty, setEmpty] = useState(true)
 
   return (
     <UserContext.Provider value={{ 
@@ -18,7 +19,9 @@ function UserContextProvider({children} : {children:ReactNode}) {
       reRender, 
       setReRender ,
       query,
-      setQuery
+      setQuery,
+      empty,
+      setEmpty
       }}>
       {children}
     </UserContext.Provider>

@@ -5,10 +5,12 @@ export interface UserContextType {
   setUser: Dispatch<any>; // Define the type of your setUser function here
   userId: string | null; 
   setUserId: Dispatch<SetStateAction<string | null>>
-  reRender:boolean;
+  reRender: boolean;
   setReRender: Dispatch<SetStateAction<boolean>>;
-  query:string;
+  query: string;
   setQuery: Dispatch<SetStateAction<string>>;
+  empty: boolean;
+  setEmpty: Dispatch<SetStateAction<boolean>>;
 }
 
 const UserContext = React.createContext<UserContextType | null>(null);
