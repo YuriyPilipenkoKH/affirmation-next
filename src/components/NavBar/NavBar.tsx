@@ -17,7 +17,7 @@ function NavBar()  {
     const router  = useRouter()
 
     const signIn = () => {
-        router.push('/sign-in')
+        router.push('/sign-in?redirect_url=https%3A%2F%2Faffirmation-next.vercel.app%2F')
         router.refresh()
     }
 
