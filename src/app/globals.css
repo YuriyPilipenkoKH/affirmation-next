@@ -82,7 +82,7 @@ img {
 .cl-card{
   width: 280px;
   @media screen and (min-width: 768px) {
-    width: 23.5rem;
+    width: 35rem;
 }
 
 }

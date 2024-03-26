@@ -6,8 +6,9 @@ import { NavWrap } from './NavBar.styled'
 import UserContext, { UserContextType } from '@/context/UserContext'
 import { useContext } from 'react'
 import CreateNewTopic from '../Modals/CreateNewTopic'
-
+import { LiaSignInAltSolid } from "react-icons/lia";
 import SearchingForm from '../Forms/SearchingForm'
+import Link from 'next/link'
 
 
 function NavBar()  {
@@ -20,10 +21,15 @@ function NavBar()  {
             <SearchingForm/>
         </div>
         <div className='flex gap-5'>
-            {userId && (
+        {userId && (
                 <CreateNewTopic/>
             )}
             <UserButton afterSignOutUrl="/"/>
+        {!userId && (
+            <Link href='/sign-in'>
+            <LiaSignInAltSolid size={30} className='text-slate-100 hover:text-yellow-500' />
+            </Link>
+            )}
         </div>
       
     </NavWrap>
