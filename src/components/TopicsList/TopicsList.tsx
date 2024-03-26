@@ -4,6 +4,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import TopicCard from '../TopicCard/TopicCard';
 import { ListMessage, ListWrap } from './TopicsList.styled';
+import Image from 'next/image';
 
 function TopicsList() {
     const [list, setList] = useState<TopicTypes[]>([]);
@@ -72,11 +73,13 @@ function TopicsList() {
           ?   (
             <ListMessage className=''>
             Notthing was found
+              <Image src='/Wile-Coyote-Shocking.png' alt='icon' width={200} height={200}/>
             </ListMessage>
             )
           :  (
             <ListMessage className=''>
             No topics here
+            <Image src='/wile-coyote-angry.png' alt='icon' width={200} height={200}/>
             </ListMessage>
            )
         }
