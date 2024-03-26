@@ -7,27 +7,31 @@ import { ListWrap } from './TopicsList.styled';
 
 function TopicsList() {
     const [list, setList] = useState<TopicTypes[]>([]);
-    const { query, reRender } = useContext(UserContext as React.Context<UserContextType>);
+    const { query, reRender, userId, } = useContext(UserContext as React.Context<UserContextType>);
     console.log(list)
-    console.log(query)
 
     const filteredTopics = list.filter(item => 
       item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query))
 
-    const grabUsersTopics = async () => {
+    const grabUsersTopics = async (id: string | null ) => {
         try {
-          const response = await axios.get("/api/topics/grab");
+          // const response = await axios.get("/api/topics/grab");
+          const response = await axios.get(`/api/topics/get/${id}`);
+
+
           if (response.data && response.data.topics) {
             setList(response.data.topics);
           }
         } catch (error) {
-          console.log("Grabbing failed", error);
+          console.log("Getting failed", error);
         }
       };
     
       useEffect(() => {
-        grabUsersTopics();
-      }, [reRender]);
+        if (userId) { // Check if userId is not null
+            grabUsersTopics(userId);
+        }
+    }, [reRender, userId]);
 
   return (
     <ListWrap >

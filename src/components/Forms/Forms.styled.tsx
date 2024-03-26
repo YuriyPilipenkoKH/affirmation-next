@@ -68,7 +68,6 @@ export const StyledSearchingForm = styled('form')`
         &> button{
             outline: none;
         }  
-
       &> button > svg {
         fill: #f8fafc;
       }  

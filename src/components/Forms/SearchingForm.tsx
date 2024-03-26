@@ -1,6 +1,6 @@
 import { searchSchema, searchSchemaType } from '@/models/searchSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext,  useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { BiSearchAlt } from "react-icons/bi";
 import { StyledSearchingForm } from './Forms.styled';
