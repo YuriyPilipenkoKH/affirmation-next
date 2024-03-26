@@ -11,6 +11,8 @@ export interface UserContextType {
   setQuery: Dispatch<SetStateAction<string>>;
   empty: boolean;
   setEmpty: Dispatch<SetStateAction<boolean>>;
+  affirmations: any;
+  setAffirmations:  Dispatch<any>
 }
 
 const UserContext = React.createContext<UserContextType | null>(null);

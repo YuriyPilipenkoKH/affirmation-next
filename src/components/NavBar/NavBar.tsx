@@ -13,7 +13,11 @@ import { useRouter } from 'next/navigation'
 
 
 function NavBar()  {
-    const { userId, empty } = useContext(UserContext as React.Context<UserContextType>);
+    const { 
+         userId,  
+         affirmations, 
+         empty
+    } = useContext(UserContext as React.Context<UserContextType>);
     const router  = useRouter()
 
     const signIn = () => {
@@ -25,7 +29,7 @@ function NavBar()  {
     <NavWrap>
         <div className='flex gap-5'>
             <Logo/>
-        {!empty && (
+        {affirmations && !empty && (
             <SearchingForm/>
             )}
         </div>

@@ -3,12 +3,20 @@ import TopicTypes from '@/models/topicTypes';
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import TopicCard from '../TopicCard/TopicCard';
-import { ListWrap } from './TopicsList.styled';
+import { ListMessage, ListWrap } from './TopicsList.styled';
 
 function TopicsList() {
     const [list, setList] = useState<TopicTypes[]>([]);
     const [loading, setLoading] = useState(false);
-    const { query, reRender, userId,  setEmpty} = useContext(UserContext as React.Context<UserContextType>);
+    const { 
+          empty,
+          query,
+          reRender, 
+          userId,  
+          setEmpty,
+          affirmations, 
+          setAffirmations
+      } = useContext(UserContext as React.Context<UserContextType>);
     console.log(list)
 
     const filteredTopics = list.filter(item => 
@@ -31,6 +39,7 @@ function TopicsList() {
             
             if (response.data && response.data.topics) {
               setList(response.data.topics);
+              setAffirmations(response.data.topics);
             }
             // setReRender(!reRender)
           })
@@ -49,37 +58,48 @@ function TopicsList() {
         }
     }, [reRender, userId]);
 
+     
       if (filteredTopics?.length === 0  && userId) {
         return(
           <ListWrap >
           {loading
-           ? (
-              <div className='flex items-center justify-center font-bold text-2xl text-slate-300'>
+          ?  (
+              <ListMessage className=''>
                   Loading ....
-               </div>
-          )
-          :(
-            <div className='flex items-center justify-center font-bold text-2xl text-slate-300'>
+               </ListMessage>
+            )
+          : (!empty)  
+          ?   (
+            <ListMessage className=''>
+            Notthing was found
+            </ListMessage>
+            )
+          :  (
+            <ListMessage className=''>
             No topics here
-          </div>
-          )
+            </ListMessage>
+           )
         }
       </ListWrap>
         )
       }else
 
   return (
-    <ListWrap >
-
-        {filteredTopics.map((topic) => (
-            <TopicCard 
+    < >
+      {userId  &&
+      (
+        <ListWrap>
+          {filteredTopics.map((topic) => (
+            <TopicCard
             key={topic?._id}
             topic={topic}
             />
-        ))
-        }
-
-    </ListWrap>
+                ))
+                }
+        </ListWrap>
+      )
+    }
+    </>
   )
 }
 
