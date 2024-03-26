@@ -60,7 +60,7 @@ export const StyledSearchingForm = styled('form')`
     }
     & > .search_btn_wrap{
         position: absolute;
-        right: 10px;
+        right: 14px;
         top: 8px;
         display: flex;
         gap: 10px;
@@ -74,5 +74,14 @@ export const StyledSearchingForm = styled('form')`
       }  
     }
 
-   
+   & > .shut{
+        position: absolute;
+        right: -4px;
+        top: 1px;
+        width: 12px;
+        height: 12px;
+        background-color: #f05f05;
+        border-radius: 50%;
+        border: 2px solid #999;
+   }
 `

@@ -125,6 +125,7 @@ useEffect(() => {
                     {...register('title')}
                      type="text"
                      className='title_field'
+                     placeholder="Topic name"
                      />
                 </label>
                 <label >Content
@@ -132,7 +133,7 @@ useEffect(() => {
                      {...register('content')}
                     className="text_field resize-none w-full "
                     rows={7}
-                    placeholder="Task conternt here"
+                    placeholder="Topic conternt here"
                     />
                 </label>
           <Btn

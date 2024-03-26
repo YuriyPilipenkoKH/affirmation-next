@@ -3,16 +3,20 @@ import React from 'react'
 import { BtnWrap, CardWrap } from './TopicCard.styled'
 import ConfirmModal from '../Modals/ConfirmModal'
 import EditTopic from '../Modals/EditTopic'
+import capitalize from '@/lib/capitalize'
+import { Popover } from 'antd'
 interface TopicCardProps {
       topic:TopicTypes
     }
 
   const TopicCard: React.FC<TopicCardProps> = ({ topic }) => {
 
+    const popoverTitle:string = "About " + capitalize(topic?.title)
+
   return (
     <CardWrap>
       <div className='card_title bg-gradient-to-r from-emerald-950 to-emerald-700'>
-        { topic?.title }
+        { capitalize(topic?.title) }
         <BtnWrap className='absolute'>
           <EditTopic
           topic={topic} />
@@ -20,9 +24,13 @@ interface TopicCardProps {
           topic={topic} />
         </BtnWrap>
       </div>
+      <Popover 
+        content={topic?.content}
+         title={popoverTitle}>
       <div className='card_content'>
         { topic?.content }
       </div>
+      </Popover>
     </CardWrap>
   )
 }
