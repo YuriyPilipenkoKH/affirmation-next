@@ -60,32 +60,44 @@ function TopicsList() {
     }, [reRender, userId]);
 
      
-      if (filteredTopics?.length === 0  && userId) {
+  if (filteredTopics?.length === 0  && userId) {
         return(
           <ListWrap >
           {loading
           ?  (
-              <ListMessage className=''>
+              <ListMessage 
+                className='ListMessage'>
                   Loading ....
                </ListMessage>
             )
           : (!empty)  
           ?   (
-            <ListMessage className=''>
-            Notthing was found
-              <Image src='/Wile-Coyote-Shocking.png' alt='icon' width={200} height={200}/>
+            <ListMessage 
+              className='ListMessage'>
+              Notthing was found
+              <Image 
+                src='/Wile-Coyote-Shocking.png' 
+                alt='icon'
+                width={200} 
+                height={200}/>
             </ListMessage>
             )
           :  (
-            <ListMessage className=''>
+            <ListMessage 
+            className='ListMessage'>
             No topics here
-            <Image src='/wile-coyote-angry.png' alt='icon' width={200} height={200}/>
+            <Image
+              src='/wile-coyote-angry.png' 
+              alt='icon' 
+              width={200} 
+              height={200}/>
             </ListMessage>
            )
         }
       </ListWrap>
         )
-      }else
+      }
+  else
 
   return (
     < >

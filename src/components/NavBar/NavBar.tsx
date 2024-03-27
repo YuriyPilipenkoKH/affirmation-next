@@ -21,9 +21,8 @@ function NavBar()  {
     const router  = useRouter()
 
     const signIn = () => {
-        router.push('/sign-in')
-        router.refresh()
-    }
+        router.push('/sign-up')
+     }
 
   return (
     <NavWrap>
@@ -37,11 +36,10 @@ function NavBar()  {
         {userId && (
                 <CreateNewTopic/>
             )}
-            <UserButton afterSignOutUrl="/"/>
+            <UserButton afterSignOutUrl="/sign-in"/>
         {!userId && (
             <button
             onClick={signIn}
-            //  href='/sign-in'
              >
             <LiaSignInAltSolid size={30} className='text-slate-100 hover:text-yellow-500' />
             </button>

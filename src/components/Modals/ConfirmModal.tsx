@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Modal } from 'antd';
+import { Modal, Tooltip } from 'antd';
 import { TfiTrash } from 'react-icons/tfi';
 import TopicTypes from '@/models/topicTypes';
 import axios from 'axios';
@@ -47,17 +47,20 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({topic}) => {
 
   return (
     <>
-
-      <button onClick={showModal}>
+    <Tooltip
+        title={"Delete"} 
+        color={'#f00c'} 
+        placement="top">
+    <button onClick={showModal}>
       <TfiTrash /> 
-      </button>
+    </button>
+    </Tooltip>
       <Modal className='ConfirmModal topic-modal'
         title={modalTitle} 
         open={isModalOpen} 
         onOk={handleOk} 
         onCancel={handleCancel}>
             <p>there will be no return...</p>
-
       </Modal>
     </>
   );

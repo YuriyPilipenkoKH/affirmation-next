@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Modal } from 'antd';
+import { Button, Modal, Tooltip } from 'antd';
 import Btn from '../Button/Button';
 import UserContext, { UserContextType } from '@/context/UserContext';
 import { useForm } from 'react-hook-form';
@@ -100,11 +100,15 @@ useEffect(() => {
 
   return (
     <>
-      <button  
-      className='CreateNewBtn'
-      onClick={showModal}>
-         <GrEdit />
-      </button>
+    <Tooltip 
+      title={"Edit"}
+      color={'#f4e91fdd'} >  
+        <button  
+          className='CreateNewBtn'
+          onClick={showModal}>
+          <GrEdit />
+        </button>
+      </Tooltip>
       <Modal
         className='topic-modal '
         open={open}
@@ -136,7 +140,7 @@ useEffect(() => {
                     placeholder="Topic conternt here"
                     />
                 </label>
-          <Btn
+           <Btn
           className='topic-submit'
           disabled={isSubmitting || !isDirty || !isValid || !!logError}
           type="submit"  
@@ -146,7 +150,7 @@ useEffect(() => {
            : "Apply changes"} 
           
            </Btn>
-           {( errors?.title || errors?.content )&& (
+              {( errors?.title || errors?.content )&& (
               <ErrorWrap className="autherror">
                 {errors.title && <div>{errors.title.message}</div>}
                 {!errors.title && errors.content && <div>{errors.content.message}</div>}
