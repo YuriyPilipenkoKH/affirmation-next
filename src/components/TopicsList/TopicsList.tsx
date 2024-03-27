@@ -15,7 +15,6 @@ function TopicsList() {
           reRender, 
           userId,  
           setEmpty,
-          affirmations, 
           setAffirmations
       } = useContext(UserContext as React.Context<UserContextType>);
     console.log(list)

@@ -8,7 +8,6 @@ import { useContext } from 'react'
 import CreateNewTopic from '../Modals/CreateNewTopic'
 import { LiaSignInAltSolid } from "react-icons/lia";
 import SearchingForm from '../Forms/SearchingForm'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 

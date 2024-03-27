@@ -26,8 +26,7 @@ function SearchingForm() {
     const {
         errors,
         isDirty,
-        isValid ,
-    } = formState
+      } = formState
     const onSubmit = async (data: searchSchemaType) => {
         console.log('data', data)
     }

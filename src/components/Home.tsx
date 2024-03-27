@@ -2,11 +2,11 @@
 
 import UserContext, { UserContextType } from "@/context/UserContext";
 import { retrieveUserId } from "@/lib/retrieveUserId"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect} from "react"
 import TopicsList from "./TopicsList/TopicsList";
 
 function HomePage() {
-    const { user, setUserId } = useContext(UserContext as React.Context<UserContextType>);
+    const {  setUserId } = useContext(UserContext as React.Context<UserContextType>);
 
     useEffect(() => {
         async function fetchCurrentUser() {

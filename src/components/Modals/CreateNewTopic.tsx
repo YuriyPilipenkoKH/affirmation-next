@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Modal } from 'antd';
+import {  Modal } from 'antd';
 import Btn from '../Button/Button';
 import UserContext, { UserContextType } from '@/context/UserContext';
 import { useForm } from 'react-hook-form';
@@ -12,7 +12,7 @@ import { CreateNewForm } from '../Forms/Forms.styled';
 
 
 const CreateNewTopic: React.FC = () => {
-    const { userId, setReRender, reRender} = useContext(UserContext as React.Context<UserContextType>);
+  const { userId, setReRender, reRender} = useContext(UserContext as React.Context<UserContextType>);
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [logError, setLogError] = useState('')
@@ -30,17 +30,17 @@ const CreateNewTopic: React.FC = () => {
     },
     mode:'all',
     resolver: zodResolver(createTopicSchema),
-})
-const {
+  })
+  const {
     errors,
     isDirty,
     isValid ,
     isSubmitting,
     isLoading,
-} = formState
+  } = formState
 
-const onSubmit = async (data: createTopicSchemaType) => {
-    console.log('data', data)
+  const onSubmit = async (data: createTopicSchemaType) => {
+      console.log('data', data)
 
     try {
 
@@ -63,11 +63,11 @@ const onSubmit = async (data: createTopicSchemaType) => {
         toast.error(error.message)
      }
 
-}
-const watchedTitle = watch('title')
-useEffect(() => {
-    setLogError('')
-}, [watchedTitle])
+  }
+  const watchedTitle = watch('title')
+  useEffect(() => {
+      setLogError('')
+  }, [watchedTitle])
 
 
   const showModal = () => {
