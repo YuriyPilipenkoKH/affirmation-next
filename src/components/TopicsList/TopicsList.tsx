@@ -67,6 +67,11 @@ function TopicsList() {
               <ListMessage 
                 className='ListMessage'>
                   Loading ....
+                  <Image 
+                src='https://res.cloudinary.com/dwdkw1a4j/image/upload/v1711559832/affirmation/coyote/aakknmhfbrdbwzrwsy00.png' 
+                alt='icon'
+                width={200} 
+                height={200}/>
                </ListMessage>
             )
           : (!empty)  
@@ -75,7 +80,7 @@ function TopicsList() {
               className='ListMessage'>
               Notthing was found
               <Image 
-                src='/Wile-Coyote-Shocking.png' 
+                src='https://res.cloudinary.com/dwdkw1a4j/image/upload/v1711559704/affirmation/coyote/ficnkqn8gar8eiy58fhm.png' 
                 alt='icon'
                 width={200} 
                 height={200}/>
@@ -86,7 +91,7 @@ function TopicsList() {
             className='ListMessage'>
             No topics here
             <Image
-              src='/wile-coyote-angry.png' 
+              src='https://res.cloudinary.com/dwdkw1a4j/image/upload/v1711559662/affirmation/coyote/exkbhnsnt5gzswmmlgj4.png' 
               alt='icon' 
               width={200} 
               height={200}/>

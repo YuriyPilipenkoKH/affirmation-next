@@ -6,7 +6,11 @@ function NotFound() {
       <h1>
         Sorry Dude 404
       </h1>
-      <Image src='/coyote-offline.png' alt='icon' width={200} height={200}/>
+      <Image 
+        src='https://res.cloudinary.com/dwdkw1a4j/image/upload/v1711559709/affirmation/coyote/ahoaqh0oupaqpifnurbw.png' 
+        alt='icon' 
+        width={200} 
+        height={200}/>
       </div>
     )
   }

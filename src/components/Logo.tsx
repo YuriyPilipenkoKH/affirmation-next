@@ -6,7 +6,7 @@ function Logo() {
   return (
     <Link href='/'>
         <Image 
-          src='/fav-coyote.png' 
+          src='https://res.cloudinary.com/dwdkw1a4j/image/upload/v1711559726/affirmation/coyote/tbyxjytkwoqa8bpwdmgt.png' 
           alt='icon' 
           width={40} 
           height={40}/>
