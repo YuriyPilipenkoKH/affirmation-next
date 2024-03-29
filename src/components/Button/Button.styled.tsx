@@ -71,8 +71,17 @@ export const SBtn = styled('button')`
   position: relative;
   overflow: hidden;
 
-
  ${buttonStyles} ;
  ${ripple} ;
+
+`;
+
+export const SBtnDelete = styled('button')`
+  position: relative;
+  overflow: hidden;
+  
+  ${buttonStyles} ;
+  ${ripple} ;
+  background-color: var(--red);
 
 `;

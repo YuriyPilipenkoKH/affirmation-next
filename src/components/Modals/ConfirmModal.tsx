@@ -6,6 +6,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import capitalize from '@/lib/capitalize';
 import UserContext, { UserContextType } from '@/context/UserContext';
+import { Btn, BtnDelete } from '../Button/Button';
 
 interface ConfirmModalProps {
     topic:TopicTypes
@@ -13,56 +14,76 @@ interface ConfirmModalProps {
 
 const ConfirmModal: React.FC<ConfirmModalProps> = ({topic}) => {
  const {  setReRender, reRender} = useContext(UserContext as React.Context<UserContextType>);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+ const [loading, setLoading] = useState(false);
+ const [open, setOpen] = useState(false);
 
   const showModal = () => {
-    setIsModalOpen(true);
+    setOpen(true);
   };
 
   const handleOk = () => {
     removeTopic(topic?._id)
-    setIsModalOpen(false);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setOpen(false);
+    }, 3000);
   };
 
   const handleCancel = () => {
-    setIsModalOpen(false);
+    setOpen(false);
   };
 
   const removeTopic = async (id:string) => {
     try {
-        const response = await axios.delete(`/api/topics/remove/${id}`)
-        .then(response => {
+      const response = await axios.delete(`/api/topics/remove/${id}`)
+      .then(response => {
 
-          toast.success(`Topic ${capitalize(topic?.title)} deleted`)
-          setReRender(!reRender)
-        })
+      toast.success(`Topic ${capitalize(topic?.title)} deleted`)
+      setReRender(!reRender)
+      })
     }
      catch (error:any) {
-        console.log("Trashing failed",error)
-        toast.error(error.message)
+      console.log("Trashing failed",error)
+      toast.error(error.message)
      }
     
   }
   const modalTitle = `Are you sure deleting ${topic?.title} ?`
 
   return (
-    <>
+  <>
     <Tooltip
-        title={"Delete"} 
-        color={'#f00c'} 
-        placement="top">
-    <button onClick={showModal}>
-      <TfiTrash /> 
-    </button>
+      title={"Delete"} 
+      color={'#f43f5e'} 
+      placement="top">
+      <button 
+        onClick={showModal}>
+          <TfiTrash /> 
+      </button>
     </Tooltip>
-      <Modal className='ConfirmModal topic-modal'
-        title={modalTitle} 
-        open={isModalOpen} 
-        onOk={handleOk} 
-        onCancel={handleCancel}>
-            <p>there will be no return...</p>
-      </Modal>
-    </>
+    <Modal 
+      className='ConfirmModal topic-modal removal_modal'
+      title={modalTitle} 
+      open={open}
+      onOk={handleOk} 
+      onCancel={handleCancel}
+      footer={[
+        <Btn
+          key="back" 
+          onClick={handleCancel}>
+          Cancel
+        </Btn>,
+        <BtnDelete
+          key="submit" 
+          onClick={handleOk}>
+          Delete
+        </BtnDelete>,
+      ]}
+      >
+        <p>there will be no return...</p>
+    </Modal>
+  </>
   );
 };
 

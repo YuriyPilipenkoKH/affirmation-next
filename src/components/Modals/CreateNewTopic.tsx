@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {  Modal } from 'antd';
-import Btn from '../Button/Button';
+import {Btn} from '../Button/Button';
 import UserContext, { UserContextType } from '@/context/UserContext';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -26,7 +26,6 @@ const CreateNewTopic: React.FC = () => {
     defaultValues: {
         title: '',
         content: '',
-       
     },
     mode:'all',
     resolver: zodResolver(createTopicSchema),
@@ -44,18 +43,18 @@ const CreateNewTopic: React.FC = () => {
 
     try {
 
-        const response = await axios.post("/api/topics/add", {
-            content: data.content,
-            title: data.title,
-            userId,
-        })
-        .then(response => {
-          toast.success(`Another Topic created`)
-          reset()
-          setReRender(!reRender)
-          handleCancel();
-         
-        })
+      const response = await axios.post("/api/topics/add", {
+          content: data.content,
+          title: data.title,
+          userId,
+      })
+      .then(response => {
+
+        toast.success(`Another Topic created`)
+        reset()
+        setReRender(!reRender)
+        handleCancel();
+      })
     }
      catch (error:any) {
         console.log("Creation failed",error)
@@ -65,10 +64,10 @@ const CreateNewTopic: React.FC = () => {
 
   }
   const watchedTitle = watch('title')
+
   useEffect(() => {
       setLogError('')
   }, [watchedTitle])
-
 
   const showModal = () => {
     setOpen(true);
@@ -94,7 +93,7 @@ const CreateNewTopic: React.FC = () => {
         New
       </Btn>
       <Modal
-        className='topic-modal '
+        className='topic-modal'
         open={open}
         title={(isLoading || isSubmitting) 
           ? "Processing" 
@@ -103,42 +102,43 @@ const CreateNewTopic: React.FC = () => {
         onCancel={handleCancel}
         footer={[ ]}
       >
-        <CreateNewForm
-          onSubmit={handleSubmit(onSubmit)}
-          className='topic-modal-form'
-          autoComplete="off"
-          noValidate>
-                <label className=''>Title
-                    <input 
-                    {...register('title')}
-                     type="text"
-                     className='title_field'
-                     placeholder="Topic name"
-                     />
-                </label>
-                <label >Content
-                    <textarea 
-                     {...register('content')}
-                    className="text_field resize-none w-full "
-                    rows={7}
-                    placeholder="Topic conternt here"
-                    />
-                </label>
-          <Btn
-          className='topic-submit'
-          disabled={isSubmitting || !isDirty || !isValid || !!logError}
-          type="submit"  
-          >
-           Create
-           </Btn>
-           {( errors?.title || errors?.content )&& (
-              <ErrorWrap className="autherror">
-                {errors.title && <div>{errors.title.message}</div>}
-                {!errors.title && errors.content && <div>{errors.content.message}</div>}
-              </ErrorWrap>
-            )}
-            {logError && <ErrorWrap className="autherror">{logError}</ErrorWrap>}
-          </CreateNewForm>
+      <CreateNewForm
+        onSubmit={handleSubmit(onSubmit)}
+        className='topic-modal-form'
+        autoComplete="off"
+        noValidate>
+          <label className=''>
+              Title
+            <input 
+            {...register('title')}
+              type="text"
+              className='title_field'
+              placeholder="Topic name"
+              />
+          </label>
+          <label >Content
+            <textarea 
+              {...register('content')}
+            className="text_field resize-none w-full "
+            rows={7}
+            placeholder="Topic conternt here"
+            />
+          </label>
+        <Btn
+        className='topic-submit'
+        disabled={isSubmitting || !isDirty || !isValid || !!logError}
+        type="submit"  
+        >
+          Create
+          </Btn>
+          {( errors?.title || errors?.content )&& (
+            <ErrorWrap className="autherror">
+              {errors.title && <div>{errors.title.message}</div>}
+              {!errors.title && errors.content && <div>{errors.content.message}</div>}
+            </ErrorWrap>
+          )}
+          {logError && <ErrorWrap className="autherror">{logError}</ErrorWrap>}
+      </CreateNewForm>
 
       </Modal>
     </>

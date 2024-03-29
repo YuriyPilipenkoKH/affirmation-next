@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Modal, Tooltip } from 'antd';
-import Btn from '../Button/Button';
+import {Btn} from '../Button/Button';
 import UserContext, { UserContextType } from '@/context/UserContext';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -97,6 +97,11 @@ useEffect(() => {
   const handleCancel = () => {
     setOpen(false);
   };
+  useEffect(() => {
+    if(!open){
+        reset()
+    }
+}, [open])
 
   return (
     <>
@@ -124,31 +129,30 @@ useEffect(() => {
           className='topic-modal-form'
           autoComplete="off"
           noValidate>
-                <label className=''>Title
-                    <input 
-                    {...register('title')}
-                     type="text"
-                     className='title_field'
-                     placeholder="Topic name"
-                     />
-                </label>
-                <label >Content
-                    <textarea 
-                     {...register('content')}
-                    className="text_field resize-none w-full "
-                    rows={7}
-                    placeholder="Topic conternt here"
-                    />
-                </label>
+          <label className=''>Title
+            <input 
+            {...register('title')}
+              type="text"
+              className='title_field'
+              placeholder="Topic name"
+              />
+          </label>
+          <label >Content
+            <textarea 
+              {...register('content')}
+            className="text_field resize-none w-full "
+            rows={7}
+            placeholder="Topic conternt here"
+            />
+          </label>
            <Btn
-          className='topic-submit'
-          disabled={isSubmitting || !isDirty || !isValid || !!logError}
-          type="submit"  
-          >
-           {(isSubmitting || !isDirty || !isValid || !!logError) 
-           ? "Edit"
-           : "Apply changes"} 
-          
+            className='topic-submit'
+            disabled={isSubmitting || !isDirty || !isValid || !!logError}
+            type="submit"  
+            >
+            {(isSubmitting || !isDirty || !isValid || !!logError) 
+            ? "Edit"
+            : "Apply changes"} 
            </Btn>
               {( errors?.title || errors?.content )&& (
               <ErrorWrap className="autherror">
