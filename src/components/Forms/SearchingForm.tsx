@@ -3,8 +3,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useContext,  useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { BiSearchAlt } from "react-icons/bi";
-import { StyledSearchingForm } from './Forms.styled';
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { StyledSearchingForm } from './Forms.styled';
 import UserContext, { UserContextType } from '@/context/UserContext';
 
 function SearchingForm() {

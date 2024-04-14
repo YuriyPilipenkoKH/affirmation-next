@@ -150,7 +150,9 @@ img {
 }
 
 .ant-popover .ant-popover-inner {
-  max-width: 500px;
+  white-space: pre;
+  font-family: monospace;
+  max-width: 700px;
   @media screen and (max-width: 767px) {
     max-width: 300px;
 

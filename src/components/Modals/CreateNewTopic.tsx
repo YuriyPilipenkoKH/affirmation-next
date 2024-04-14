@@ -69,6 +69,10 @@ const CreateNewTopic: React.FC = () => {
       setLogError('')
   }, [watchedTitle])
 
+  useEffect(() => {
+    if(!open){ reset() }
+  }, [open])
+
   const showModal = () => {
     setOpen(true);
   };

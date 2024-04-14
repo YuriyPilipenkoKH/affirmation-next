@@ -81,6 +81,9 @@ useEffect(() => {
     setLogError('')
 }, [watchedTitle])
 
+useEffect(() => {
+  if(!open){ reset() }
+}, [open])
 
   const showModal = () => {
     setOpen(true);
@@ -97,11 +100,7 @@ useEffect(() => {
   const handleCancel = () => {
     setOpen(false);
   };
-  useEffect(() => {
-    if(!open){
-        reset()
-    }
-}, [open])
+
 
   return (
     <>

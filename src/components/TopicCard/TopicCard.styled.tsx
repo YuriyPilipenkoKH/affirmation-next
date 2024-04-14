@@ -34,6 +34,7 @@ export const CardWrap = styled('div')`
     &>.card_content{
         padding: 12px 8px ;
         width: 100%;
+        max-width: 728px;
         border-radius: 6px;
         border: 2px solid #ee0;
         background-color: beige;

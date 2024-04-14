@@ -19,7 +19,7 @@ export async function PATCH(req: NextRequest) {
         if (!topic) {
             // If collection not found, return 404 response
             return NextResponse.json(
-                { message: "Collection not found" },
+                { message: "Topic not found" },
                 { status: 404 }
             );
         }
