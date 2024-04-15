@@ -1,10 +1,7 @@
-
 import { connectMongoDB } from "@/lib/mongoDB";
 import Topic from "@/models/topicSchema";
 import { NextRequest, NextResponse } from "next/server";
 
-
-// connectMongoDB()
 
 export async function POST(req:NextRequest) {
     try {

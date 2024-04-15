@@ -8,7 +8,6 @@ export async function GET(req:NextRequest,  {params}: {params: {id: string | nul
     try {
         await connectMongoDB()
         const {id:userId} = params
-        // console.log('-ID-',userId)
         const topics = await Topic.find({userId})
 
         return NextResponse.json({

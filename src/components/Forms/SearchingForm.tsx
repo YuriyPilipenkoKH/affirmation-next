@@ -31,35 +31,7 @@ function SearchingForm() {
         console.log('data', data)
     }
 
-  //   useEffect(() => {
-  //     const handleClickOutside = (event: MouseEvent) => {
-       
-   
-  //         if (formRef.current && !formRef.current.contains(event.currentTarget as Node)) {
-  //             // Clicked outside the form, so close it
-  //             setOpen(false);
-  //         }
-  //     };
 
-  //     const handleEscKey = (event: KeyboardEvent) => {
-  //         if (event.key === 'Escape') {
-  //             // Pressed ESC key, so close the form
-  //             setOpen(false);
-  //         }
-  //     };
-
-  //     // Add event listeners when the form is open
-  //     if (open) {
-  //         document.addEventListener('mousedown', handleClickOutside);
-  //         document.addEventListener('keydown', handleEscKey);
-  //     }
-
-  //     // Remove event listeners when the component is unmounted
-  //     return () => {
-  //         document.removeEventListener('mousedown', handleClickOutside);
-  //         document.removeEventListener('keydown', handleEscKey);
-  //     };
-  // }, [open]);
 
   const cleaner =() => {
     reset()

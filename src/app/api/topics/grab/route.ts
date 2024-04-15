@@ -10,7 +10,6 @@ export async function GET(request:NextRequest, response:NextResponse) {
         const topics = await db.collection("topics")
         .find()
         .toArray();
-        // Assuming you have a collections collection in your MongoDB
 
         return NextResponse.json({
             message: `Topics found`,
