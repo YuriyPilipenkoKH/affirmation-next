@@ -25,7 +25,7 @@ export const CardWrap = styled('div')`
         height: 50px;
         border-radius: 6px;
         overflow: hidden; 
-
+        width: 100%;
 
     @media screen and (min-width: 768px) {
          padding: 12px 80px 12px 20px
@@ -38,7 +38,7 @@ export const CardWrap = styled('div')`
         background-color: beige;
         max-height: 140px;
         overflow: hidden; 
-
+        width: 100%;
 
     @media screen and (min-width: 768px) {
         padding: 12px 20px ;
