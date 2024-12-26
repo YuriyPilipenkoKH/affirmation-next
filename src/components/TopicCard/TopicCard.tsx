@@ -24,7 +24,9 @@ interface TopicCardProps {
           topic={topic} />
         </BtnWrap>
       </div>
-      <Popover defaultOpen={true}
+      <Popover 
+      className='Card_popover'
+      defaultOpen={true}
         content={topic?.content}
          title={popoverTitle} >
       <div 
