@@ -12,6 +12,7 @@ export const CardWrap = styled('div')`
     gap: 4px;
     align-items: flex-start; 
     width: 100%;
+    max-width: 724px; 
 
     &>.card_title{
         position: relative;
@@ -21,7 +22,6 @@ export const CardWrap = styled('div')`
         align-items: center;
         justify-content: flex-start;
         padding: 12px 80px 12px 8px;
-        width: 100%;
         height: 50px;
         border-radius: 6px;
         overflow: hidden; 
@@ -33,8 +33,6 @@ export const CardWrap = styled('div')`
     }
     &>.card_content{
         padding: 12px 8px ;
-        width: 100%;
- 
         border-radius: 6px;
         border: 2px solid #ee0;
         background-color: beige;
