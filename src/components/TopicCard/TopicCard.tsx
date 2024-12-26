@@ -31,7 +31,7 @@ interface TopicCardProps {
          title={popoverTitle} >
       <div 
         className='card_content' 
-        style={{ whiteSpace: 'pre', fontFamily: 'monospace' }}
+        style={{ whiteSpace: 'pre', fontFamily: 'monospace' , overflow: 'hidden'}}
         >
         { topic?.content }
       </div>
