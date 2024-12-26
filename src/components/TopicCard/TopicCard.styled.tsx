@@ -11,8 +11,9 @@ export const CardWrap = styled('div')`
     flex-direction: column;
     gap: 4px;
     align-items: flex-start; 
+    padding: 12px;
     width: 100%;
-    max-width: 724px; 
+    max-width: 296px; 
 
     &>.card_title{
         position: relative;
@@ -28,7 +29,10 @@ export const CardWrap = styled('div')`
         width: 100%;
 
     @media screen and (min-width: 768px) {
-         padding: 12px 80px 12px 20px
+        max-width: 724px; 
+    }
+    @media screen and (min-width: 1280px) {
+        max-width: 1236px; 
     }
     }
     &>.card_content{
@@ -41,7 +45,7 @@ export const CardWrap = styled('div')`
         width: 100%;
 
     @media screen and (min-width: 768px) {
-        padding: 12px 20px ;
+        padding: 12px 22px ;
     }
     }
 
