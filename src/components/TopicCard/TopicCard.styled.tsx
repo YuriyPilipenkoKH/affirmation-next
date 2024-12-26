@@ -11,10 +11,17 @@ export const CardWrap = styled('div')`
     flex-direction: column;
     gap: 4px;
     align-items: flex-start; 
-    padding: 12px;
+    padding: 0;
     width: 100%;
     max-width: 296px; 
-
+    
+    @media screen and (min-width: 768px) {
+        max-width: 724px; 
+        padding: 12px 22px ;
+    }
+    @media screen and (min-width: 1280px) {
+        max-width: 1236px; 
+    }
     &>.card_title{
         position: relative;
         color: #e4e4e7;
@@ -28,12 +35,6 @@ export const CardWrap = styled('div')`
         overflow: hidden; 
         width: 100%;
 
-    @media screen and (min-width: 768px) {
-        max-width: 724px; 
-    }
-    @media screen and (min-width: 1280px) {
-        max-width: 1236px; 
-    }
     }
     &>.card_content{
         padding: 12px 8px ;
@@ -44,11 +45,8 @@ export const CardWrap = styled('div')`
         overflow: hidden; 
         width: 100%;
 
-    @media screen and (min-width: 768px) {
-        padding: 12px 22px ;
-    }
-    }
 
+    }
 `;
 
 export const BtnWrap = styled('div')`
